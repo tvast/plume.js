@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+  </head>
+
+  <body>
+    <script type="module" src="./endpoints.js"></script>
+    <script type="module" src="./fetch.js"></script>
+    <script type="module" src="./auth.js"></script>
+    <script type="text/javascript">
+
+    import {Amadeus} from "./endpoints.js"
+import {fetchApi} from "./fetch.js"
+import {postUrlToken} from "./auth.js"
+
+      try 
+{
+postUrlToken("qztkbf5XWjNSGkXRF9bfAwNg6bELWvVD","w9mJ7ZJzlEGNffut").then(x=>console.log(x))
+} 
+
+catch(error) {
+  console.error(error);
+}
+    </script>
+  </body>
+</html>
