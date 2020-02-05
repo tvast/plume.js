@@ -10,7 +10,7 @@ var http = require('http').createServer(app);
 const cors = require('cors')
 var express = require('express')
 
-var { foo, bar, createOrder, confirmPrice, endpoints } = require('plume')
+var { token, flightSearch, createOrder, confirmPrice, endpoints } = require('plume')
 
 let allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', "*");
@@ -18,18 +18,18 @@ let allowCrossDomain = function(req, res, next) {
   next();
 }
 app.use(allowCrossDomain);
-var token= ""
+var tokenAccess= ""
 try 
 {
-foo("qztkbf5XWjNSGkXRF9bfAwNg6bELWvVD","w9mJ7ZJzlEGNffut").then(function(x){
-var NaseUrl = "https://test.api.amadeus.com"
+  token("SECRET_","ID_").then(function(x){
+  var NaseUrl = "URI_ENDPOINT"
 
 try {
-bar(endpoints.searchFlight, NaseUrl,"BKK", "SYD", "2020-03-16", x.access_token).then(function(y){
+  flightSearch(endpoints.searchFlight, NaseUrl,"BKK", "SYD", "2020-03-16", x.access_token).then(function(y){
   console.log(y)
   
 try {
-  createOrder("https://test.api.amadeus.com",endpoints.createOrder,y.data[1], "a@gmail.com", x.access_token).then(z=>console.log(z))
+  createOrder("https://test.api.amadeus.com",endpoints.createOrder,y.data[2], "a@gmail.com", x.access_token).then(z=>console.log(z))
 }
 catch(error) {
   console.error(error);
@@ -50,5 +50,5 @@ catch(error) {
 
 var server = app.listen(process.env.PORT || 7000,()=>{
   console.log("Howdy, I am running at PORT 7000")
-})
+
 ```
