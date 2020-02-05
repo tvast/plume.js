@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "lighweight fetcher for amadeus self service api",
   "main": "index.js",
+  "repository": "tvast/plume.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
