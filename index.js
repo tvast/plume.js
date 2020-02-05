@@ -11,9 +11,9 @@ const uriAuth ="https://test.api.amadeus.com/v1/security/oauth2/token"
 
 
 const endpoints = {
-  searchFlight:"/shopping/flight-offers",
-  "flightPrice":"/shopping/flight-offers/pricing",
-  "createOrder":"/booking/flight-orders"
+  searchFlight:"/v2/shopping/flight-offers",
+  flightPrice:"/shopping/flight-offers/pricing",
+  createOrder:"/v1/booking/flight-orders"
 }
 
 
@@ -79,8 +79,10 @@ const bar =async function fetchApi(uriApi,NaseUrl, departure , arrival , date,to
       }
     }
 
+    // console.log(NaseUrl+uriApi)
+
   // Default options are marked with *
-  const response = await fetch("https://test.api.amadeus.com/v2/shopping/flight-offers", {
+  const response = await fetch(NaseUrl+uriApi, {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -93,11 +95,11 @@ const bar =async function fetchApi(uriApi,NaseUrl, departure , arrival , date,to
     referrerPolicy: 'no-referrer', // no-referrer, *client
     body: JSON.stringify(request) // body data type must match "Content-Type" header
   });
-  console.log(token)
+  // console.log(token)
   return await response.json(); // parses JSON response into native JavaScript objects
 }
 
-const createOrder =async function createOrder(flightOffer , mail,token) {
+const createOrder =async function createOrder(NaseUrl,uriApi,flightOffer , mail,token) {
 
   let request = 
  {
@@ -203,9 +205,9 @@ const createOrder =async function createOrder(flightOffer , mail,token) {
     ]
   }
 }
-
+// console.log(NaseUrl+uriApi)
   // Default options are marked with *
-  const response = await fetch("https://test.api.amadeus.com/v1/booking/flight-orders", {
+  const response = await fetch(NaseUrl+uriApi, {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -218,7 +220,7 @@ const createOrder =async function createOrder(flightOffer , mail,token) {
     referrerPolicy: 'no-referrer', // no-referrer, *client
     body: JSON.stringify(request) // body data type must match "Content-Type" header
   });
-  console.log(request)
+  // console.log(request)
   return await response.json(); // parses JSON response into native JavaScript objects
 }
 
