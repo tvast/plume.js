@@ -1,6 +1,6 @@
 {
   "name": "@tvast/plume.js",
-  "version": "1.0.3",
+  "version": "1.0.34",
   "description": "lighweight fetcher for amadeus self service api",
   "main": "index.js",
   "repository": "tvast/plume.js",

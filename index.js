@@ -140,8 +140,6 @@ const flightPrice = async function flifghtPrice(uriApi,NaseUrl,inputFlightOffer,
 }
 
 const createOrder =async function createOrder(NaseUrl,uriApi,flightOffer , mail,token) {
-
-  
 // console.log(NaseUrl+uriApi)
   // Default options are marked with *
   const response = await fetch(NaseUrl+uriApi, {
