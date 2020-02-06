@@ -1,6 +1,6 @@
 {
-  "name": "@tvast/plume.js",
-  "version": "1.0.2",
+  "name": "plume.js",
+  "version": "1.0.0",
   "description": "lighweight fetcher for amadeus self service api",
   "main": "index.js",
   "repository": "tvast/plume.js",
@@ -8,8 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "fetch",
-    "travel"
+    "amadeus"
   ],
   "author": "theophile vast",
   "license": "MIT",
